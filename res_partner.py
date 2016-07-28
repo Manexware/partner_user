@@ -180,35 +180,3 @@ class partner(osv.osv):
             sequence = (sequence + 1) if sequence else 2
         return new_name
 
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-# from openerp import models
-#
-#
-# class InheritedPartner(models.Model):
-#     _inherit = 'res.partner'
-#
-#     def _create_user(self, cr, uid, partner, context=None):
-#         """ create a new user for partner.partner_id
-#             @param partner: browse record of model partner.user
-#             @return: browse record of model res.users
-#         """
-#         res_users = self.env['res.users']
-#         # to prevent shortcut creation
-#         create_context = dict(
-#             context or {}, noshortcut=True, no_reset_password=True)
-#         if partner.email:
-#             login = extract_email(partner.email)
-#         else:
-#             login = self._clean_and_make_unique(
-#                 cr, uid, partner.name, context=context)
-#         values = {
-#             # 'email': extract_email(partner.email),
-#             'login': login,
-#             # 'login': extract_email(partner.email),
-#             'partner_id': partner.id,
-#             'company_id': partner.company_id.id,
-#             'company_ids': [(4, partner.company_id.id)],
-#             'password': ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(6)),
-#             'groups_id': [(6, 0, [])],
-#         }
-#         return res_users.with_context(signup_valid=True).create(values, context=create_context)
