@@ -8,7 +8,7 @@ import unicodedata
 from openerp.osv import osv, fields
 from openerp import SUPERUSER_ID
 from openerp.tools.translate import _
-from openerp.tools import email_split
+from openerp.tools import email_split, single_email_re
 from openerp.tools import ustr
 import string
 import random
@@ -140,7 +140,7 @@ class partner(osv.osv):
         # to prevent shortcut creation
         create_context = dict(
             context or {}, noshortcut=True, no_reset_password=True, signup_valid=True,create_user=True)
-        if partner.email:
+        if partner.email and single_email_re.match(partner.email):
             login = extract_email(partner.email)
         else:
             login = self._clean_and_make_unique(
