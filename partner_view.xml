@@ -25,7 +25,7 @@
                             string="Create" 
                             type="object"
                             class="oe_link oe_inline"
-                            groups="base.group_erp_manager"
+                                groups="base.group_erp_manager"
                             attrs="{'invisible':[('related_user_id','!=',False)]}"/> 
                             <!-- attrs="{'invisible':['|',('related_user_id','!=',False),('template_user_id','=',False)]}"/>  -->
                             <!-- lo cambiamos porque da errores de acceso en algunos casos en template_user_id -->
