@@ -32,7 +32,8 @@
                         <button name="open_related_user" 
                             string="Open" 
                             type="object" 
-                            class="oe_link oe_inline"  
+                            class="oe_link oe_inline"
+                                groups="base.group_erp_manager"
                             attrs="{'invisible':[('related_user_id','=',False)]}"/>
                         <button name="delete_user" 
                             string=" - Delete" 
