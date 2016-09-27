@@ -5,11 +5,18 @@
 ##############################################################################
 import re
 import unicodedata
-from openerp.osv import osv, fields
-from openerp import SUPERUSER_ID
-from openerp.tools.translate import _
-from openerp.tools import email_split, single_email_re
-from openerp.tools import ustr
+try:
+    from openerp.osv import osv, fields
+    from openerp import SUPERUSER_ID
+    from openerp.tools.translate import _
+    from openerp.tools import email_split, single_email_re
+    from openerp.tools import ustr
+except:
+    from odoo.osv import osv, fields
+    from odoo import SUPERUSER_ID
+    from odoo.tools.translate import _
+    from odoo.tools import email_split, single_email_re
+    from odoo.tools import ustr
 import string
 import random
 
