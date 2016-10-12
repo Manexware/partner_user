@@ -11,7 +11,12 @@
                 <field name="email" position="attributes">
                     <!-- attrs="{'required': [('user_ids','!=', [])]}"/> -->
                     <attribute name="required">1</attribute>
-                </field>                
+                </field>
+                <notebook position="inside">
+                    <page string="Usuarios" groups="base.group_erp_manager">
+                        <field name="user_ids"/>
+                    </page>
+                </notebook>
                 <field name="website" position="after">
                     <label for="related_user_id"/>
                     <div class="oe_inline">
